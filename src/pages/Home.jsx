@@ -84,6 +84,114 @@ const Home = () => {
     }
   ];
 
+  // Products data
+  const productsData = [
+    {
+      "category": "Gaming",
+      "products": [
+        {
+          "id": 1,
+          "name": "Gaming Beast X1",
+          "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2042&q=80",
+          "price": "$1200",
+          "description": "High-end gaming PC with RTX 4080 and 32GB RAM."
+        },
+        {
+          "id": 2,
+          "name": "Pro Gamer Z3",
+          "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2042&q=80",
+          "price": "$999",
+          "description": "Compact gaming setup with fast SSD and RGB lighting."
+        },
+        {
+          "id": 3,
+          "name": "Elite Gaming Alpha",
+          "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2042&q=80",
+          "price": "$1500",
+          "description": "Ultimate gaming experience with liquid cooling and high FPS."
+        }
+      ]
+    },
+    {
+      "category": "Printer",
+      "products": [
+        {
+          "id": 4,
+          "name": "Ultra Printer P1",
+          "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+          "price": "$499",
+          "description": "High-speed printer with wireless connectivity."
+        },
+        {
+          "id": 5,
+          "name": "LaserJet Pro L2",
+          "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+          "price": "$399",
+          "description": "Efficient laser printer for home and office use."
+        },
+        {
+          "id": 6,
+          "name": "All-in-One Printer X3",
+          "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+          "price": "$599",
+          "description": "Print, scan, and copy in one sleek device."
+        }
+      ]
+    },
+    {
+      "category": "Laptop",
+      "products": [
+        {
+          "id": 7,
+          "name": "Laptop Pro 15",
+          "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
+          "price": "$899",
+          "description": "Powerful laptop with Intel i7, 16GB RAM, 512GB SSD."
+        },
+        {
+          "id": 8,
+          "name": "UltraBook Z5",
+          "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
+          "price": "$1099",
+          "description": "Slim ultrabook for professionals and creators."
+        },
+        {
+          "id": 9,
+          "name": "Gaming Laptop G9",
+          "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
+          "price": "$1299",
+          "description": "Laptop optimized for gaming with RTX 4070 and high refresh screen."
+        }
+      ]
+    },
+    {
+      "category": "Monitor",
+      "products": [
+        {
+          "id": 10,
+          "name": "4K Ultra Monitor M1",
+          "image": "https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
+          "price": "$499",
+          "description": "High-resolution 4K monitor with HDR support."
+        },
+        {
+          "id": 11,
+          "name": "Gaming Monitor G2",
+          "image": "https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
+          "price": "$399",
+          "description": "144Hz refresh rate monitor perfect for competitive gaming."
+        },
+        {
+          "id": 12,
+          "name": "Curved Monitor C3",
+          "image": "https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
+          "price": "$599",
+          "description": "Immersive curved screen for work and entertainment."
+        }
+      ]
+    }
+  ];
+
   return (
     <div className="flex flex-col">
       {/* Hero Banner Section */}
@@ -166,77 +274,168 @@ const Home = () => {
         </Swiper>
       </section>
 
-    
-<section className="py-20 px-4 md:px-8 lg:px-16 bg-base-100">
-  <div className="container mx-auto">
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        Shop By Category
-      </h2>
-      <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
-        Discover our wide range of premium products organized by category to help you find exactly what you need
-      </p>
-    </motion.div>
-    
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-      {categories.map((category, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          viewport={{ once: true }}
-          className="group"
-        >
-          <Link 
-            to={category.link} 
-            className="flex flex-col items-center p-8 bg-base-100 rounded-xl shadow-sm border border-base-300/50 
-            hover:shadow-xl hover:border-primary/20 transition-all duration-300 group-hover:-translate-y-2"
+      {/* Shop By Category Section */}
+      <section className="py-20 px-4 md:px-8 lg:px-16 bg-base-100">
+        <div className="container mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <div className="relative mb-6 w-32 h-32 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full 
-              group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300 scale-0 group-hover:scale-110"></div>
-              <img 
-                src={category.image} 
-                alt={category.name} 
-                className="w-full h-full object-contain relative z-10 transform group-hover:scale-110 transition-transform duration-300" 
-              />
-            </div>
-            
-            <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
-              {category.name}
-            </h3>
-            
-            <span className="text-primary font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Explore now
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </Link>
-        </motion.div>
-      ))}
-    </div>
-    
-    <motion.div 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.4 }}
-      viewport={{ once: true }}
-      className="text-center mt-12"
-    >
-      <Link to="/categories" className="btn btn-outline btn-primary px-8">
-        View All Categories
-      </Link>
-    </motion.div>
-  </div>
-</section>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Shop By Category
+            </h2>
+            <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
+              Discover our wide range of premium products organized by category to help you find exactly what you need
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {categories.map((category, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <Link 
+                  to={category.link} 
+                  className="flex flex-col items-center p-8 bg-base-100 rounded-xl shadow-sm border border-base-300/50 
+                  hover:shadow-xl hover:border-primary/20 transition-all duration-300 group-hover:-translate-y-2"
+                >
+                  <div className="relative mb-6 w-32 h-32 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full 
+                    group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300 scale-0 group-hover:scale-110"></div>
+                    <img 
+                      src={category.image} 
+                      alt={category.name} 
+                      className="w-full h-full object-contain relative z-10 transform group-hover:scale-110 transition-transform duration-300" 
+                    />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+                    {category.name}
+                  </h3>
+                  
+                  <span className="text-primary font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Explore now
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link to="/categories" className="btn btn-outline btn-primary px-8">
+              View All Categories
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Top Sale Section */}
+      <section className="py-20 px-4 md:px-8 lg:px-16 bg-base-200">
+        <div className="container mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Top Sale
+            </h2>
+            <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
+              Check out our best-selling products that everyone is talking about
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+            {[
+              // Flatten all products from all categories
+              ...productsData[0].products, // Gaming
+              ...productsData[1].products, // Printer
+              ...productsData[2].products, // Laptop
+              ...productsData[3].products  // Monitor
+            ].map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <Link 
+                  to={`/order/${product.id}`} 
+                  className="flex flex-col h-full bg-base-100 rounded-xl shadow-sm border border-base-300/50 
+                  hover:shadow-xl hover:border-primary/20 transition-all duration-300 group-hover:-translate-y-2"
+                >
+                  <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300" 
+                    />
+                    <div className="absolute top-4 right-4 bg-primary text-primary-content text-xs font-bold px-2 py-1 rounded-full">
+                      Top Sale
+                    </div>
+                  </div>
+                  
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+                      {product.name}
+                    </h3>
+                    
+                    <p className="text-base-content/70 mb-4 flex-grow">
+                      {product.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mt-auto">
+                      <span className="text-2xl font-bold text-primary">
+                        {product.price}
+                      </span>
+                      
+                      <span className="text-primary font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Order Now
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link to="/products" className="btn btn-outline btn-primary px-8">
+              View All Products
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };

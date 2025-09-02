@@ -1,3 +1,4 @@
+// Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext";
@@ -84,20 +85,26 @@ const Navbar = () => {
         </label>
 
         {currentUser ? (
-          <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img 
-                  alt="User profile" 
-                  src={currentUser.photoURL || `https://ui-avatars.com/api/?name=${currentUser.displayName || currentUser.email}&background=random`} 
-                />
+          <>
+            <Link to="/dashboard" className="btn btn-outline btn-sm md:btn-md hidden md:flex">
+              Dashboard
+            </Link>
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img 
+                    alt="User profile" 
+                    src={currentUser.photoURL || `https://ui-avatars.com/api/?name=${currentUser.displayName || currentUser.email}&background=random`} 
+                  />
+                </div>
               </div>
+              <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><button onClick={handleLogout}>Sign Out</button></li>
+              </ul>
             </div>
-            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-              <li><Link to="/profile">Profile</Link></li>
-              <li><button onClick={handleLogout}>Sign Out</button></li>
-            </ul>
-          </div>
+          </>
         ) : (
           <>
             <Link to="/signin" className="btn btn-outline btn-sm md:btn-md">Sign In</Link>
