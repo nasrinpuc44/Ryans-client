@@ -10,16 +10,13 @@ const Home = () => {
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    // Listen for theme changes
     const handleThemeChange = () => {
       const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
       setTheme(currentTheme);
     };
     
-    // Set initial theme
     handleThemeChange();
     
-    // Create a mutation observer to watch for theme changes
     const observer = new MutationObserver(handleThemeChange);
     observer.observe(document.documentElement, { 
       attributes: true,
@@ -29,10 +26,10 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Banner slides data - simplified to not depend on theme for images
+  // Banner slides data
   const bannerSlides = [
     {
-      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       title: "Discover Amazing",
       typewriterWords: ["Events", "Experiences", "Memories"],
       description: "Find the best events happening around you. From concerts to conferences, we've got you covered.",
@@ -42,7 +39,7 @@ const Home = () => {
       link2: "/about"
     },
     {
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       title: "Join The",
       typewriterWords: ["Community", "Celebration", "Movement"],
       description: "Be part of something bigger. Connect with like-minded people and create unforgettable experiences.",
@@ -52,7 +49,7 @@ const Home = () => {
       link2: "/about"
     },
     {
-      image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       title: "Create Your",
       typewriterWords: ["Story", "Adventure", "Legacy"],
       description: "Every event is a new chapter in your life's story. Make it count with our curated experiences.",
@@ -63,67 +60,33 @@ const Home = () => {
     }
   ];
 
-  // Sample event data (all 6 events from your API)
-  const featuredEvents = [
+  // Categories data
+  const categories = [
     {
-      "availability": "Available",
-      "category": "Health",
-      "event_name": "Global Health Summit 2025",
-      "location": "International Convention Hall",
-      "ticket_price": "Free",
-      "date": "2025-06-20",
-      "image": "https://i.ibb.co/0yKfVZc/health-summit.jpg"
+      name: "Printer",
+      image: "https://i.ibb.co.com/s9bWq0PW/printer-PNG7743.png",
+      link: "/category/printer"
     },
     {
-      "availability": "Available",
-      "category": "Culture",
-      "event_name": "Cultural Dance Festival",
-      "location": "Open Air Theater",
-      "ticket_price": "$10",
-      "date": "2025-07-02",
-      "image": "https://i.ibb.co/Zm4c5Ck/cultural-dance.jpg"
+      name: "Gaming",
+      image: "https://i.ibb.co.com/W9mMTK4/unnamed.webp",
+      link: "/category/gaming"
     },
     {
-      "availability": "Available",
-      "category": "Business",
-      "event_name": "Startup Innovators Meetup",
-      "location": "Tech Hub Auditorium",
-      "ticket_price": "$15",
-      "date": "2025-07-10",
-      "image": "https://i.ibb.co/6btP7t7/startup-meetup.jpg"
+      name: "Laptop",
+      image: "https://i.ibb.co.com/TxKR23Gc/depositphotos-269193596-stock-illustration-realistic-laptop-vector-illustration-in.webp",
+      link: "/category/laptop"
     },
     {
-      "availability": "Available",
-      "category": "Food",
-      "event_name": "International Food Fair",
-      "location": "Downtown Market Square",
-      "ticket_price": "$5",
-      "date": "2025-07-15",
-      "image": "https://i.ibb.co/3z6Lr3y/food-fair.jpg"
-    },
-    {
-      "availability": "Available",
-      "category": "Tech",
-      "event_name": "AI Technology Conference",
-      "location": "Innovation Center",
-      "ticket_price": "$25",
-      "date": "2025-07-22",
-      "image": "https://i.ibb.co/fkStS0h/ai-conference.jpg"
-    },
-    {
-      "availability": "Available",
-      "category": "Music",
-      "event_name": "Summer Music Festival",
-      "location": "Lakeside Amphitheater",
-      "ticket_price": "$20",
-      "date": "2025-07-30",
-      "image": "https://i.ibb.co/3p0xY5d/music-festival.jpg"
+      name: "Monitor",
+      image: "https://i.ibb.co.com/jPS1NgXp/monitor-1.png",
+      link: "/category/monitor"
     }
   ];
 
   return (
     <div className="flex flex-col">
-      {/* 1. Hero Banner Section (Full-width slider) */}
+      {/* Hero Banner Section */}
       <section className="rounded-t-none rounded-b-3xl">
         <Swiper
           modules={[Autoplay]}
@@ -203,36 +166,77 @@ const Home = () => {
         </Swiper>
       </section>
 
-      {/* Featured Events Section */}
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-base-100">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Events</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredEvents.map((event, index) => (
-              <div key={index} className="card bg-base-100 shadow-xl">
-                <figure>
-                  <img src={event.image} alt={event.event_name} className="h-48 w-full object-cover" />
-                </figure>
-                <div className="card-body">
-                  <h3 className="card-title">{event.event_name}</h3>
-                  <p className="text-sm text-gray-500">{event.category}</p>
-                  <p className="text-sm">{new Date(event.date).toLocaleDateString()}</p>
-                  <p className="text-sm">{event.location}</p>
-                  <p className="font-bold">{event.ticket_price}</p>
-                  <div className="card-actions justify-end mt-4">
-                    <Link 
-                      to={`/event-details/${index}`} 
-                      className="btn btn-primary btn-sm"
-                    >
-                      View Details
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    
+<section className="py-20 px-4 md:px-8 lg:px-16 bg-base-100">
+  <div className="container mx-auto">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        Shop By Category
+      </h2>
+      <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
+        Discover our wide range of premium products organized by category to help you find exactly what you need
+      </p>
+    </motion.div>
+    
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      {categories.map((category, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="group"
+        >
+          <Link 
+            to={category.link} 
+            className="flex flex-col items-center p-8 bg-base-100 rounded-xl shadow-sm border border-base-300/50 
+            hover:shadow-xl hover:border-primary/20 transition-all duration-300 group-hover:-translate-y-2"
+          >
+            <div className="relative mb-6 w-32 h-32 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full 
+              group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300 scale-0 group-hover:scale-110"></div>
+              <img 
+                src={category.image} 
+                alt={category.name} 
+                className="w-full h-full object-contain relative z-10 transform group-hover:scale-110 transition-transform duration-300" 
+              />
+            </div>
+            
+            <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+              {category.name}
+            </h3>
+            
+            <span className="text-primary font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Explore now
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </Link>
+        </motion.div>
+      ))}
+    </div>
+    
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+      viewport={{ once: true }}
+      className="text-center mt-12"
+    >
+      <Link to="/categories" className="btn btn-outline btn-primary px-8">
+        View All Categories
+      </Link>
+    </motion.div>
+  </div>
+</section>
     </div>
   );
 };
